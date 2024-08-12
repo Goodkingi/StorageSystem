@@ -1,0 +1,62 @@
+{% extends 'store_app/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}store{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+{% comment %} {{product}} {% endcomment %}
+{% include 'store_app/includes/header.html'%}
+ <table class="table table-success table-striped">
+         {% if inventory == "" %}<p>No record found</p>{% endif %}
+  <caption>Product List</caption>
+  <thead>
+    <tr>
+      <th scope="col">SN</th>
+      <th scope="col">Department</th>
+      <th scope="col">Address</th>
+      <th scope="col">Item</th>
+         <th scope="col">Quantity</th>
+        <th scope="col">Category</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Barcode</th>
+         <th scope="col">Serial Number</th>
+         <th scope="col">Status</th>
+         <th scope="col">Condition</th>
+         <th scope="col">Issued Date</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in product %}
+    <tr>
+      <th scope="row">{{ item.id }}</th>
+     
+        <td>{{ item.product_department }}</td>
+        <td>{{ item.product_address }}</td>
+        <td> <a href="{% url "product-detail" item.id %}">{{ item.product_name }}</a></td>
+            <td>{{ item.product_quantity }}</td>
+        <td>{{ item.product_categorie }}</td>
+        <td>{{ item.product_brand }}</td>
+        <td>{{ item.product_barcode }}</td>
+            <td>{{ item.product_serial_number }}</td>
+        <td>{{ item.product_status }}</td>
+        <td>{{ item.product_condition }}</td>
+    <td>{{ item.received_date }}</td>
+        <td></td>
+    <td><a style="color: red" href="">Delete</a>|
+            <a href="">update</a></td>
+    </tr>
+   {% endfor %}
+  </tbody>
+  
+</table>
+total product:{{total}}
+{% endblock %}
+</div>
+
+</body>
+</html>

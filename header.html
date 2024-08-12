@@ -1,0 +1,67 @@
+{% extends "store_app/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block content %}
+        <div class="container">
+           
+          <h1 class="" style="text-align:center">TANZANIA SOCIAL ACTION FUND <br> STORE MANAGEMENT SYSTEM </h1>
+          <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+              <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img align="" src="{% static "store_app/brand/tasaff.png" %}" width="50px" height="50px">
+                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+              </a>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
+              <li><a href="{% url "home" %}" class="nav-link px-2 link-secondary active" aria-current="page">Home</a></li>
+              <li><a href="{% url "all-links" %}" class="nav-link px-2">Features</a></li>
+              <li><a href="#" class="nav-link px-2">Pricing</a></li>
+              <li><a href="#" class="nav-link px-2">FAQs</a></li>
+              <li><a href="{% url "about" %}" class="nav-link px-2">About</a></li>
+            </ul>
+      
+            <div class="col-md-3 text-end">
+              <a href="{% url "login" %}">
+              <button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+              <a href="{% url "register" %}">
+              <button type="button" class="btn btn-primary">Sign-up</button></a>
+            </div>
+          </header>
+        </div>
+{% comment %}       
+        <div class="b-example-divider"></div>
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{% url "home" %}" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="{% url "all-links" %}" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Store</a></li>
+                
+                <li class="nav-item"><a href="{% url "about" %}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{% url "login" %}"class ="nav-link">login</a></li>
+                <li class="nav-item"><a href="{% url "register" %}"class ="nav-link">register</a></li>
+              </ul>
+            </header>
+          </div> {% endcomment %}
+        <script src="" async defer></script>
+        {% endblock %}
+       
+    </body>
+</html>

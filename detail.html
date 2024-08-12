@@ -1,0 +1,67 @@
+{% extends 'store_app/base.html' %}
+{% load static %}
+{%block title%}product detail{% endblock %}
+{% block content %}
+{% include 'store_app/include/header.html'%}
+<h1>PRODUCT DETAILS</h1>
+{% comment %} {{status}} {% endcomment %}
+     <div>
+        <p>
+            
+        </p>
+ </div>
+    
+<div class="">
+    <div class="">
+       <img src="{% static "store_app/brand/tasaff.png" %}" width="" height="">
+       <p>
+        <h3>Name of product:{{ detail.name }}</h3> 
+        <h3>item code:{{detail.serial }}</h3>
+       <h3>unit of issue:{{ detail.quantity }}</h3>
+       <h3>Year:{{ detail.brand }}</h3>
+       <h3>Maximum stock(Quantity):{{ detail.quantity }}</h3>
+       </p>
+       <div class="">
+        <table class="table table-success table-striped" border="1px" style="border: 1px;border-style: solid">
+            <thead>STORE ITEM BIN-CARD</thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Department</th>
+                <th scope="col">Reciept</th>
+                <th scope="col">Recieved<span> from</span></th>
+                <th scope="col" colspan="3">Quantity</th>
+            </tr>
+            <tr>
+                 <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Recieved</th>
+                <th>issued</th>
+                <th>Balance</th>
+            </tr>
+         </thead>
+      <tbody>
+           
+            <tr>
+               <td>{{ detail.id }}</td>
+                <td>{{detail.name }}</td>
+                <td>{{ detail.brand }}</td>
+                <td>00000</td>
+                <td>main store</td>
+                <td>{{ detail.quantity }}</td>
+                <td>None</td>
+                <td>{{ detail.quantity }}</td>
+            </tr>
+    
+      </tbody>
+    </table>
+       </div>
+    </div>
+</div>
+<a href="">back</a>
+{% endblock %}
+
+

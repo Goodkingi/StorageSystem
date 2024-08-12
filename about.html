@@ -1,0 +1,14 @@
+{% extends "store_app/base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+{% include "store_app/include/header.html" %}
+    <h1>About Us</h1>
+    {{data}}
+    {% for context_data in data %}
+        {{data.id}}
+        {{data.name}}
+        {{data.category}}
+        {{data.serial}}
+        {% endfor %}
+{% endblock content %}
+
